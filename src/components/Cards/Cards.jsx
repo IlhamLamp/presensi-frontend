@@ -1,27 +1,28 @@
-import React from 'react'
-import { CardsData } from '../../data/Data'
-import Card from '../Card/Card'
-import './Cards.css'
+import React from "react";
+import "./Cards.css";
+import { cardsData } from "../../Data/Data";
+
+import Card from "../Card/Card";
 
 const Cards = () => {
   return (
-    <div className="cards">
-        {CardsData.map((card, id)=>{
-            return(
-                <div className="parentContainer">
-                    <Card
-                    title={card.title}
-                    color={card.color}
-                    barValue={card.barValue}
-                    value={card.value}
-                    png={card.png}
-                    series={card.series}
-                    />
-                </div>
-            )
-        })}
+    <div className="Cards">
+      {cardsData.map((card, id) => {
+        return (
+          <div className="parentContainer" key={id}>
+            <Card
+              title={card.title}
+              color={card.color}
+              barValue={card.barValue}
+              value={card.value}
+              png={card.png}
+              series={card.series}
+            />
+          </div>
+        );
+      })}
     </div>
-  )
-}
+  );
+};
 
-export default Cards
+export default Cards;
