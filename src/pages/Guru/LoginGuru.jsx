@@ -78,7 +78,7 @@ const LoginGuru = () => {
     <div className="loginGuru">
       <div className="login-form">
         <div className="title">Sign In</div>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+        {isSubmitted ? <div>Dah login bang</div> : renderForm}
       </div>
     </div>
   )

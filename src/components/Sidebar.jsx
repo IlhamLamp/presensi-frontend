@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import "./Sidebar.css";
-import Logo from "../imgs/logo.png";
+import Logo from "../imgs/logo-sekolah.png";
 import { UilSignOutAlt } from "@iconscout/react-unicons";
 import { SidebarData } from "../Data/Data";
 import { UilBars } from "@iconscout/react-unicons";
@@ -9,7 +10,9 @@ import { motion } from "framer-motion";
 const Sidebar = () => {
   const [selected, setSelected] = useState(0);
 
-  const [expanded, setExpaned] = useState(true)
+  const [expanded, setExpaned] = useState(true);
+
+  const navigate = useNavigate();
 
   const sidebarVariants = {
     true: {
@@ -19,7 +22,9 @@ const Sidebar = () => {
       left : '-60%'
     }
   }
+
   console.log(window.innerWidth)
+
   return (
     <>
       <div className="bars" style={expanded?{left: '60%'}:{left: '5%'}} onClick={()=>setExpaned(!expanded)}>
@@ -33,23 +38,29 @@ const Sidebar = () => {
       <div className="logo">
         <img src={Logo} alt="logo" />
         <span>
-          Sh<span>o</span>ps
+          SM<span>A</span>DU
         </span>
       </div>
 
+      {/* Menu */}
       <div className="menu">
         {SidebarData.map((item, index) => {
           return (
             <div
               className={selected === index ? "menuItem active" : "menuItem"}
               key={index}
-              onClick={() => setSelected(index)}
+              onClick={() => {
+                setSelected(index);
+                navigate(item.path);
+              }}
             >
               <item.icon />
               <span>{item.heading}</span>
             </div>
           );
         })}
+      
+
         {/* signoutIcon */}
         <div className="menuItem">
           <UilSignOutAlt />
