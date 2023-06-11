@@ -1,16 +1,14 @@
+// Analytics Cards imports
+import { UilUsdSquare, UilMoneyWithdrawal } from "@iconscout/react-unicons";
+
 // Sidebar imports
 import {
   UilEstate,
+  UilCamera,
+  UilUniversity,
   UilClipboardAlt,
-  UilUsersAlt,
-  UilPackage,
-  UilChart,
-  UilSignOutAlt,
+  UilUserSquare,
 } from "@iconscout/react-unicons";
-
-// Analytics Cards imports
-import { UilUsdSquare, UilMoneyWithdrawal } from "@iconscout/react-unicons";
-import { keyboard } from "@testing-library/user-event/dist/keyboard";
 
 // Recent Card Imports
 import img1 from "../imgs/img1.png";
@@ -21,25 +19,31 @@ import img3 from "../imgs/img3.png";
 export const SidebarData = [
   {
     icon: UilEstate,
-    heading: "Dashboard",
+    heading: "Home",
+    path: "/",
+  },
+  {
+    icon: UilCamera,
+    heading: "Kehadiran",
+    path: "/kehadiran",
+  },
+  {
+    icon: UilUniversity,
+    heading: "Kelas",
+    path: "/kelas",
   },
   {
     icon: UilClipboardAlt,
-    heading: "Orders",
+    heading: "Laporan",
+    path: "/laporan",
   },
   {
-    icon: UilUsersAlt,
-    heading: "Customers",
-  },
-  {
-    icon: UilPackage,
-    heading: 'Products'
-  },
-  {
-    icon: UilChart,
-    heading: 'Analytics'
+    icon: UilUserSquare,
+    heading: "Data Siswa",
+    path: "/data-siswa"
   },
 ];
+
 
 // Analytics Cards Data
 export const cardsData = [
